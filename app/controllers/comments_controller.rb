@@ -1,3 +1,4 @@
+
 class CommentsController < ApplicationController
   before_action :set_comment, only: %i[ show edit update destroy ]
 
@@ -22,7 +23,7 @@ class CommentsController < ApplicationController
   # POST /comments or /comments.json
   def create
     @comment = Comment.new(comment_params)
-
+    @comment.user_id = current_user.id
     respond_to do |format|
       if @comment.save
         format.html { redirect_to comment_url(@comment), notice: "Comment was successfully created." }
@@ -68,3 +69,4 @@ class CommentsController < ApplicationController
       params.require(:comment).permit(:commenter, :body)
     end
 end
+

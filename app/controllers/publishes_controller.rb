@@ -1,5 +1,7 @@
+
 class PublishesController < ApplicationController
   before_action :set_publish, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except:[:index]
 
   # GET /publishes or /publishes.json
   def index
@@ -22,7 +24,7 @@ class PublishesController < ApplicationController
   # POST /publishes or /publishes.json
   def create
     @publish = Publish.new(publish_params)
-
+    @publish.user_id = current_user.id
     respond_to do |format|
       if @publish.save
         format.html { redirect_to publish_url(@publish), notice: "Publish was successfully created." }
