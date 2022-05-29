@@ -1,0 +1,57 @@
+.container{
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+}
+.titulo-iniciar{
+    margin-bottom: 3%;
+}
+.checkbox{
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+.signUp{
+    margin-bottom: 3%;
+}
+.col-md{
+    margin: 2%;
+}
+#img-session{
+    width: 70%;
+    margin: auto;
+}
+#img-register{
+    width: 50%;
+    margin: auto;
+}
+.register{
+    margin-bottom: 3%;
+}
+#card-session{
+    margin-top: 40px;
+    border-radius: 15px;
+    padding: inherit;
+}
+#card-register{
+    width: 100%;
+    border-radius: 15px;
+    padding: inherit;
+    margin-top: 40px;
+}
+.card{
+    box-shadow: black 0px 5px 10px;
+}
+@media (max-width: 600px){
+    .card{
+        margin-top: 1px;
+    }
+}
+#img_perfil{
+    width:250px;
+    height:250px;
+    border-radius:150px;
+    background-color: #F0F3F4 ;
+    box-shadow: black 0px 5px 10px;
+    display: block; 
+    position: relative;
+}
