@@ -1,19 +1,15 @@
-<h2>Log in</h2>
-
 <div class="container">
-    <div id="card-session" class="card" style="width: 100%;">
+    <div id="card-session" class="card" style="width: 50%;">
         <img id="img-session" src="../../../../assets/img/logo1.png" class="card-img-top" alt="...">
         <div class="card-body">
           <!-- <h5 class="card-title">Universal Code</h5> -->
-          <h1 id="offcanvasRightLabel" style="text-align:center;">Iniciar sesión</h1>
+          <h1 id="offcanvasRightLabel" class="titulo-iniciar" style="text-align:center;">Iniciar sesión</h1>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="row">
     <div class="col-md">
       <div class="form-floating">
-        <%= f.label :email%><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
-                        <%# <input type="text" class="form-control" id="email" formControlName="email">
-                        <label for="first_name">Correo Electronico</label> %>
+        <%= f.label :email%>
       </div>
     </div>
   </div>
@@ -21,32 +17,31 @@
   <div class="row">
     <div class="col-md">
       <div class="form-floating">
-            <%= f.label :password %><br />
             <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
-                        <%# <input type="text" class="form-control" id="email" formControlName="email">
-                        <label for="first_name">Correo Electronico</label> %>
+            <%= f.label :password %>
       </div>
     </div>
   </div>
 
   <% if devise_mapping.rememberable? %>
-    <div class="field">
+    <div class="checkbox">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
   <% end %>
 
-  <%# <div class="actions">
-  </div> %>
   <div class="row">
-      <div class="d-grid gap-2 col-6 mx-auto">
-        <%= f.submit "Log in", class: 'btn btn-outline-warning' %>
-        <%# <button id="button" class="btn btn-outline-warning" type="submit">Iniciar sesión</button> %>
+      <div class="d-grid gap-2 col-6 mx-auto mb-3">
+        <%= f.submit "Log in", class: 'btn btn-outline-warning login' %>
       </div>
+  </div>
+  <div class="row">
+    <div class="signUp">
+      <%= render "users/shared/links" %>
+    </div>
   </div>
 <% end %>
         </div>
       </div>
 </div>
 
-<%= render "users/shared/links" %>
