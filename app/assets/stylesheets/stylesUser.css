@@ -6,6 +6,14 @@
 .titulo-iniciar{
     margin-bottom: 3%;
 }
+.header{
+    display: flex;
+    justify-content: center;
+}
+.img-top{
+    width: 30%;
+    display: flex;
+}
 .checkbox{
     margin-top: 1%;
     margin-bottom: 2%;
@@ -28,7 +36,7 @@
     margin-bottom: 3%;
 }
 #card-session{
-    margin-top: 40px;
+    margin-top: 20px;
     border-radius: 15px;
     padding: inherit;
 }
@@ -36,7 +44,7 @@
     width: 100%;
     border-radius: 15px;
     padding: inherit;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 .card{
     box-shadow: black 0px 5px 10px;
