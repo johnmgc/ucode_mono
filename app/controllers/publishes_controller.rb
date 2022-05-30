@@ -1,7 +1,7 @@
 
 class PublishesController < ApplicationController
   before_action :set_publish, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except:[:index]
+  before_action :authenticate_user!, except:[:index, :likes_publish]
 
   # GET /publishes or /publishes.json
   def index
@@ -24,7 +24,9 @@ class PublishesController < ApplicationController
   # POST /publishes or /publishes.json
   def create
     @publish = Publish.new(publish_params)
-    @publish.user_id = current_user.id
+    #binding.break
+    @publish.usuario_id = current_user.id
+    @publish.published_at = Date.today
     respond_to do |format|
       if @publish.save
         format.html { redirect_to publish_url(@publish), notice: "Publish was successfully created." }
@@ -59,6 +61,14 @@ class PublishesController < ApplicationController
     end
   end
 
+  def likes_publish
+    publish = Publish.find(params[:id])
+    publish.likes = publish.counterLikes(params[:id]) if params[:format] == "likes"
+    publish.dislikes = publish.counterdislikes(params[:id]) if params[:format] == "dislikes"
+    publish.save(validate: false)
+    render publish
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_publish
@@ -67,6 +77,6 @@ class PublishesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def publish_params
-      params.require(:publish).permit(:title, :content)
+      params.require(:publish).permit(:title, :content, :likes, :dislikes)
     end
 end

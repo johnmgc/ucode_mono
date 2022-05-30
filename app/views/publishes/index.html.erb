@@ -1,17 +1,60 @@
 <div class="container">
-<p style="color: green"><%= notice %></p>
+  
+  <div class="row">
+    <div class="col-md-12">
+      <%= render "search" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12"> 
+      <div class="btn-group" role="group">  
+        <%= button_to 'Activas', user_session_path, class: 'btn btn-warning box-1', id:'btnActive'%>
+        <%= button_to 'Populares', user_session_path, class: 'btn btn-warning box-1', id:'btnPopular'%>
+        <button type="button" class="btn btn-warning bi bi-filter box-1" data-bs-toggle="dropdown" aria-expanded="false" id="btnfilter"></button>
+        <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+          <li><a class="dropdown-item" href="#">Semana</a></li>
+          <li><a class="dropdown-item" href="#">Mes</a></li>
+          <li><a class="dropdown-item" href="#">Año</a></li>
+        </ul>
+        <%= button_to '', user_session_path, class: 'btn btn-secondary box-1 bi bi-question-circle', id:'btnQuestion' %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Publicaciones</h5>
+        </div>  
+      </div> 
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h6 class="card-title">Temas mas votados</h6>
+        </div>  
+      </div>
+    </div>
+  </div>
+  
 
-<h1>Publishes</h1>
+  
 
-<div id="publishes">
-  <% @publishes.each do |publish| %>
-    <%= render publish %>
-    <p>
-      <%= link_to "Show this publish", publish %>
-    </p>
-  <% end %>
-</div>
-<%= link_to "New publish", new_publish_path %>
+    <p style="color: green"><%= notice %></p>
+
+  <h1>Publicaciones</h1>
+
+  <div id="publishes">
+    <% @publishes.each do |publish| %>
+      <%= render publish %>
+      <p>
+        <%= link_to "Ver Publicación", publish %>
+      </p>
+    <% end %>
+  </div>
+
+  <%= link_to "Nueva Publicación", new_publish_path %>
+
 </div>
 
 

@@ -3,8 +3,11 @@
 <%= render @publish %>
 
 <div>
-  <%= link_to "Edit this publish", edit_publish_path(@publish) %> |
-  <%= link_to "Back to publishes", publishes_path %>
-
-  <%= button_to "Destroy this publish", @publish, method: :delete %>
+<% if @publish.usuario_id == current_user.id %>
+    <%= link_to "Edit this publish", edit_publish_path(@publish) %>
+    <%= button_to "Destroy this publish", @publish, method: :delete %>
+    <%= link_to "Back to publishes", publishes_path %>
+  <% else  %>
+    <%= link_to "Back to publishes", publishes_path %>
+  <% end %>
 </div>
