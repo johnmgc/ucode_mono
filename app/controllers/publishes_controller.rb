@@ -5,7 +5,18 @@ class PublishesController < ApplicationController
 
   # GET /publishes or /publishes.json
   def index
-    @publishes = Publish.all
+    if !params[:search].blank?
+      q = params[:search]
+      @publishes =  Publish.search_content(q)
+        if @publishes.size > 0
+           @publishes
+        else
+          flash.now[:alert] = "No se encontraron coincidencias con la palabra: #{q}"
+          @publishes = Publish.all  
+        end  
+      else
+        @publishes = Publish.all
+    end
   end
 
   # GET /publishes/1 or /publishes/1.json
