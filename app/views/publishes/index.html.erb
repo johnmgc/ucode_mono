@@ -1,17 +1,9 @@
 <div class="container">
-  <div id="search" class="buscar">            
-    <input type="text" placeholder="Buscar" required />      
-    <div id="btn" class="btn">
-      <i id="icon-search" class="bi bi-search"></i>
-    </div>
-  </div>
-
-  <p style="color: green"><%= notice %></p>
+<p style="color: green"><%= notice %></p>
 
 <h1>Publishes</h1>
 
 <div id="publishes">
-
   <% @publishes.each do |publish| %>
     <%= render publish %>
     <p>
@@ -19,9 +11,7 @@
     </p>
   <% end %>
 </div>
-
 <%= link_to "New publish", new_publish_path %>
-
 </div>
 
 
