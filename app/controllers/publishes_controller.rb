@@ -24,7 +24,7 @@ class PublishesController < ApplicationController
   # POST /publishes or /publishes.json
   def create
     @publish = Publish.new(publish_params)
-    binding.break
+    #binding.break
     @publish.usuario_id = current_user.id
     respond_to do |format|
       if @publish.save
