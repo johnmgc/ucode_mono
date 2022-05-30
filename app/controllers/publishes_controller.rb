@@ -26,6 +26,7 @@ class PublishesController < ApplicationController
     @publish = Publish.new(publish_params)
     #binding.break
     @publish.usuario_id = current_user.id
+    @publish.published_at = Date.today
     respond_to do |format|
       if @publish.save
         format.html { redirect_to publish_url(@publish), notice: "Publish was successfully created." }
