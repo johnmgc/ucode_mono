@@ -172,3 +172,7 @@
     display: block; 
     position: relative;
 }
+.reset{
+    display: flex;
+    margin-left: -27px;
+}
