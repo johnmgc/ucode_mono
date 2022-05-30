@@ -24,7 +24,8 @@ class PublishesController < ApplicationController
   # POST /publishes or /publishes.json
   def create
     @publish = Publish.new(publish_params)
-    @publish.user_id = current_user.id
+    binding.break
+    @publish.usuario_id = current_user.id
     respond_to do |format|
       if @publish.save
         format.html { redirect_to publish_url(@publish), notice: "Publish was successfully created." }
