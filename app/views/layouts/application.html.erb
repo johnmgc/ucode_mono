@@ -17,11 +17,11 @@
   </head>
 
   <body>  
-  <%= render "layouts/navbarfull" %>  
-  <div class="container">
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-    <%= yield %>
-  </div>
+    <%= render "layouts/navbarfull" %>  
+    <div class="container">
+        <p style="color: green" class="notice notices_succes"><%= notice %></p>
+        <p style="color: red" class="alert notices_alert"><%= alert %></p>
+      <%= yield %>
+    </div>
   </body>
 </html>
