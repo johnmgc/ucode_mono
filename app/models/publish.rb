@@ -38,7 +38,6 @@ scope :search_content, ->(search){ where("content LIKE ?", "%"+search+"%" ).orde
         end
     end
 
-
     
 end
 
