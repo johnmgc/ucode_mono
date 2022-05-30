@@ -13,8 +13,7 @@ has_many :comments
 
 #>>>>>>>>>>>>>>Scopes<<<<<<<<<<<<<<<<<<
 
-scope :search_title, ->(search){ where("title LIKE ?", "%"+search+"%" ).order("created_at DESC") }
-scope :search_content, ->(search){ where("content LIKE ?", "%"+search+"%" ).order("created_at DESC") }
+scope :search_content, ->(search){ where("content LIKE ? or title LIKE ?", "%"+search+"%","%"+search+"%" ).order("created_at DESC") }
 
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
