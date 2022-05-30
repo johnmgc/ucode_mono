@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <div class="btn-group" role="group">
+      <button type="button" id="menu" class="btn navbar-toggler-icon"></button>
+      <h5>Universal Code</h5>
+    </div>
+        
+          
+    <div>   
+      <%= link_to 'Iniciar Sesion', user_session_path, class: 'btn btn-xs btn-default' %>
+      <%= link_to 'Cerrar Sesion', destroy_user_session_path, method: :delete, class: 'btn btn-xs btn-default' %>
+    </div>
+  </div>
+</nav>
