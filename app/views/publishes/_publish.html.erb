@@ -1,12 +1,23 @@
 <div id="<%= dom_id publish %>">
+  
   <p>
-    <strong>Title:</strong>
+    <strong>Creado:</strong>
+    <%= publish.created_at.to_date %>
+  </p>
+
+  <p>
+    <strong>Titulo:</strong>
     <%= publish.title %>
   </p>
 
   <p>
-    <strong>Content:</strong>
+    <strong>Contenido:</strong>
     <%= publish.content %>
   </p>
+
+  <div class="btn-group" role="group">
+      <%= button_to "Me Gusta: #{publish.likes}", likes_publishes_path(publish.id,"likes"), method: "post",  class: 'btn btn-light' %>
+      <%= button_to "No me Gusta: #{publish.dislikes}", likes_publishes_path(publish.id,"dislikes"), method: "post",  class: 'btn btn-light' %>
+  </div>    
 
 </div>
