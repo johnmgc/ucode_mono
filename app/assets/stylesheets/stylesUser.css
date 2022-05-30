@@ -1,7 +1,7 @@
-.container{
+#container{
     display: flex;
     justify-content: center;
-    margin-top: 3%;
+    margin-top: -6%;
 }
 .titulo-iniciar{
     margin-bottom: 3%;
@@ -36,15 +36,16 @@
     margin-bottom: 3%;
 }
 #card-session{
+    width: 50%;
     margin-top: 20px;
     border-radius: 15px;
     padding: inherit;
 }
 #card-register{
-    width: 100%;
+    width: 50%;
     border-radius: 15px;
     padding: inherit;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .card{
     box-shadow: black 0px 5px 10px;
@@ -52,6 +53,114 @@
 @media (max-width: 600px){
     .card{
         margin-top: 1px;
+    }
+}
+@media (max-width: 400px){
+    .img-top{
+        width: 40%;
+        display: flex;
+    }
+    #card-register{
+        width: 80%;
+        border-radius: 15px;
+        padding: inherit;
+        margin-top: 10px;
+    }
+    .header{
+        display: flex;
+        justify-content: center;
+    }
+    .col-md{
+        margin: 2%;
+    }
+    #container{
+        display: flex;
+        justify-content: center;
+        margin-top: -16%;
+    }
+    .card{
+        width: 80%;
+    }
+}
+@media (max-width: 770px){
+    .img-top{
+        width: 40%;
+        display: flex;
+    }
+    #card-register{
+        width: 80%;
+        border-radius: 15px;
+        padding: inherit;
+        margin-top: 25px;
+    }
+    .header{
+        display: flex;
+        justify-content: center;
+    }
+    .col-md{
+        margin: 2%;
+    }
+    #container{
+        display: flex;
+        justify-content: center;
+        margin-top: -16%;
+    }
+    .card{
+        width: 80%;
+    }
+}
+@media (max-width: 400px){
+    .img-top{
+        width: 40%;
+        display: flex;
+    }
+    #card-session{
+        width: 80%;
+        margin-top: 20px;
+        border-radius: 15px;
+        padding: inherit;
+    }
+    .header{
+        display: flex;
+        justify-content: center;
+    }
+    .col-md{
+        margin: 2%;
+    }
+    #container{
+        display: flex;
+        justify-content: center;
+        margin-top: -16%;
+    }
+    .card{
+        width: 80%;
+    }
+}
+@media (max-width: 770px){
+    .img-top{
+        width: 40%;
+        display: flex;
+    }
+    #card-session{
+        width: 80%;
+        margin-top: 30px;
+        border-radius: 15px;
+        padding: inherit;
+    }
+    .header{
+        display: flex;
+        justify-content: center;
+    }
+    .col-md{
+        margin: 2%;
+    }
+    #container{
+        display: flex;
+        justify-content: center;
+        margin-top: -16%;
+    }
+    .card{
+        width: 80%;
     }
 }
 #img_perfil{
