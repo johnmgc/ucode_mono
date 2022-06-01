@@ -18,7 +18,9 @@ scope :search_content, ->(search){ where("content LIKE ? or title LIKE ?", "%"+s
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
-
+#>>>>>>>>>>>>>>>>>>>>paginacion<<<<<<<<<<<<<<<<<<<<<<<
+paginates_per 2
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
     def counterLikes(id)
