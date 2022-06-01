@@ -7,12 +7,12 @@ class PublishesController < ApplicationController
   def index
     if !params[:search].blank?
       q = params[:search]
-      @publishes =  Publish.search_content(q)
+      @publishes =  Publish.search_content(q).page params[:page]
         if @publishes.size > 0
            @publishes
         else
           flash.now[:alert] = "No se encontraron coincidencias con la palabra: #{q}"
-          @publishes = Publish.all  
+          @publishes = Publish.page params[:page] 
         end  
       else
         @publishes = Publish.page params[:page]
