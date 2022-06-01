@@ -15,7 +15,7 @@ class PublishesController < ApplicationController
           @publishes = Publish.all  
         end  
       else
-        @publishes = Publish.all
+        @publishes = Publish.page params[:page]
     end
   end
 
