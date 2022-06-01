@@ -37,7 +37,7 @@
 }
 #card-session{
     width: 50%;
-    margin-top: 20px;
+    margin-top: 5%;
     border-radius: 15px;
     padding: inherit;
 }
@@ -45,7 +45,7 @@
     width: 50%;
     border-radius: 15px;
     padding: inherit;
-    margin-top: 10px;
+    margin-top: 5%;
 }
 .card{
     box-shadow: black 0px 5px 10px;
@@ -174,5 +174,4 @@
 }
 .reset{
     display: flex;
-    margin-left: -27px;
 }
