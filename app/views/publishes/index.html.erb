@@ -15,15 +15,21 @@
           <li><a class="dropdown-item" href="#">Mes</a></li>
           <li><a class="dropdown-item" href="#">Año</a></li>
         </ul>
-        <%= button_to '', user_session_path, class: 'btn btn-secondary box-1 bi bi-question-circle', id:'btnQuestion' %>
+        <%= link_to "", new_publish_path, class: 'btn btn-secondary box-1 bi bi-question-circle', id:'btnQuestion' %>
       </div>
     </div>
   </div>
-  <div class="row">
+  <div class="row" id="container-card">
     <div class="col-md-8">
       <div class="card" id="card-publications">
         <div class="card-body">
           <h5 class="card-title">Publicaciones</h5>
+            <div id="publishes">
+              <% @publishes.each do |publish| %>
+              <%= render publish %>
+              <% end %>
+            </div>         
+            <%# <%= link_to "Nueva Publicación", new_publish_path %>
         </div>  
       </div> 
     </div>
@@ -37,18 +43,7 @@
   </div>
 
 
-  <h1>Publicaciones</h1>
-
-  <div id="publishes">
-    <% @publishes.each do |publish| %>
-      <%= render publish %>
-      <p>
-        <%= link_to "Ver Publicación", publish %>
-      </p>
-    <% end %>
-  </div>
-
-  <%= link_to "Nueva Publicación", new_publish_path %>
+  
 
 </div>
 
