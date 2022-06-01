@@ -1,23 +1,9 @@
 <div class="card" id="container-publishes">
   <div class="card-body">
     <div id="<%= dom_id publish %>">
-  
-      <p>
-        <strong>Creado:</strong>
-        <%= publish.published_at.to_s.to_date %>
-      </p>
-
-      <p>
-        <strong>Titulo:</strong>
-        <%= publish.title %>
-      </p>
-
-      <p>
-        <strong>Contenido:</strong>
-        <%= publish.content %>
-      </p>
-  
-
+      <p><%= link_to "#{publish.title}", publish, id:'title_publish' %></p>
+      <p><%= publish.content %></p>
+      <p id="create"><strong>Creado:</strong><%= publish.published_at.to_s.to_date%></p>
         <div class="row" id="container-like">
           <div class="col-1" id="btnLike">
             <%= button_to "", likes_publishes_path(publish.id,"likes"), method: "post",  class: 'btn btn-light position-absolute bi bi-emoji-laughing', id:"like"%>
@@ -30,19 +16,8 @@
           <span class="position-relative top-0 start-100 translate-middle badge rounded-pill bg-danger">
               <%= publish.dislikes %>
           </span>
-        </div>
-          
-
-
-          
-
-          
-      
+        </div>                        
       </div>
-      
-      <p>
-        <%= link_to "Ver Publicación", publish %>
-      </p>
     </div>
   </div>
 </div>
