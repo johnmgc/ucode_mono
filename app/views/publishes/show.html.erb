@@ -4,10 +4,20 @@
 
 <div>
 <% if @publish.usuario_id == current_user.id %>
-    <%= link_to "Edit this publish", edit_publish_path(@publish) %>
-    <%= button_to "Destroy this publish", @publish, method: :delete %>
-    <%= link_to "Back to publishes", publishes_path %>
+    <div class="row" id="btnPublish_id">
+      <div class="col-md-2">
+        <%= link_to "Editar publicacion", edit_publish_path(@publish), class: 'btn btn-secondary', id:'btnEdit_p' %>
+      </div>
+      <div class="col-md-2">
+        <%= button_to "Eliminar publicacion", @publish, method: :delete, class: 'btn btn-secondary', id:'btnDelete_p' %>
+      </div>
+       <div class="col-md-2">
+          <%= link_to "Regresar", publishes_path, class: 'btn btn-secondary', id:'btnBack_p' %>
+       </div>
+    </div>   
   <% else  %>
-    <%= link_to "Back to publishes", publishes_path %>
+    <div class="row" id="btnPublish_id">
+      <%= link_to "Back to publishes", publishes_path, class: 'btn btn-secondary' %>
+    </div>
   <% end %>
 </div>
