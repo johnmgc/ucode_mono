@@ -7,7 +7,7 @@ class PublishesController < ApplicationController
   def index
     if !params[:search].blank?
       q = params[:search]
-      @publishes =  Publish.search_content(q).page params[:page]
+      @publishes =  Publish.search_content(q).page params[:page] 
         if @publishes.size > 0
            @publishes
         else
