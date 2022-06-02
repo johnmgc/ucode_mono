@@ -25,19 +25,19 @@
     </div>
   </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="checkbox">
+  <%# <% if devise_mapping.rememberable? %>
+   <%# <div class="checkbox">
       <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
+     <%# <%= f.label :remember_me %>
+    <%#</div>
   <% end %>
 
-  <div class="row">
+  <div class="row" id="btnSession">
       <div class="d-grid gap-2 col-6 mx-auto mb-3">
-        <%= f.submit "Log in", class: 'btn btn-outline-warning login' %>
+        <%= f.submit "Ingresar", class: 'btn btn-warning login' %>
       </div>
   </div>
-  <div class="row">
+  <div class="row" id="link_session">
     <div class="signUp">
       <%= render "users/shared/links" %>
     </div>
