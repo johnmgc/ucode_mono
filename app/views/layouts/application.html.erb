@@ -21,18 +21,26 @@
   </head>
 
   <body>  
-    <%= render "layouts/navbarfull" %>  
+<div class="container-body">
+   <%= render "layouts/navbarfull" %>  
     <div class="container mt-5">
     <% if !alert.blank? %>
-      <div class="alert alert-dark" role="alert">
-        <%= alert %>
+      <div class="row" id="content-alert">
+        <div class="alert alert-danger" role="alert" id="alert_danger">
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          <%= alert %>        
+        </div>
       </div>
-    <% elsif !notice.blank? %>
-      <div class="alert alert-light" role="alert">
-        <%= notice %>
+        <% elsif !notice.blank? %>
+          <div class="row" id="content-alert">
+            <div class="alert alert-warning" role="alert">
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <%= notice %>
+          </div>
       </div>
     <% end %>
       <%= yield %>
     </div>
+</div>  
   </body>
 </html>

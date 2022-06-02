@@ -42,7 +42,7 @@ class PublishesController < ApplicationController
     @publish.published_at = Date.today
     respond_to do |format|
       if @publish.save
-        format.html { redirect_to publish_url(@publish), notice: "Publish was successfully created." }
+        format.html { redirect_to publish_url(@publish), notice: "La publicación se creó con éxito." }
         format.json { render :show, status: :created, location: @publish }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -69,7 +69,7 @@ class PublishesController < ApplicationController
     @publish.destroy
 
     respond_to do |format|
-      format.html { redirect_to publishes_url, notice: "Publish was successfully destroyed." }
+      format.html { redirect_to publishes_url, notice: "La publicacion fue eliminada con éxito." }
       format.json { head :no_content }
     end
   end

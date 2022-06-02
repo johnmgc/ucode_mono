@@ -10,18 +10,25 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="row" id="title-question">
+    <h2>Cual es tu pregunta?</h2>
+  </div>
+  <div class="row" id="input-title">
+    <%# <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title, class:"form-control"%>
+    <div id="info-question" class="form-text">Especifique su pregunta de forma clara</div>
   </div>
 
-  <div>
-    <%= form.label :content, style: "display: block" %>
-    <%= form.text_area :content %>
+  <div class="row" id="input-content">
+    <%# <%= form.label :content, style: "display: block" %>
+    <%= form.text_area :content, class:"form-control" %>
+    <div id="info-body" class="form-text">Incluye toda la informacion necesaria para respoder tu pregunta</div>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="row">
+    <%= form.submit class:"btn btn-warning", value:'Guardar' %>
+  </div>
+  <div class="row" id="back-question">
+  <%= link_to "Regresar a inicio", publishes_path %>
   </div>
 <% end %>
