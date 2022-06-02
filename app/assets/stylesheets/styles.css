@@ -96,8 +96,21 @@ body{
         margin-left: 3%; */
     }
     #btnDislike{
-        margin-left: 15%;
+        margin-left: 10%;
+        margin-right: 10%;
+        
     }
+    #container-publishes{
+        width: 95%;
+    }
+    #container-like{
+        justify-content: end !important;
+        margin-bottom: 4%;
+    }
+    #publish_name{
+        padding-left: 10%;
+    }
+
 }
 
 @media (max-width: 1000) {
@@ -165,6 +178,7 @@ body{
     box-shadow: none;
     background-color: #F0F3F4;
     margin: 2%;
+    padding: 2%;
 }
 #container-card{
     margin-bottom: 7%;
@@ -189,6 +203,27 @@ body{
 }
 #container-like{
     justify-content: end !important;
+}
+#create{
+    font-style: italic;
+    font-size: 12px;
+}
+#title_publish{
+    font-size: 25px;
+    text-decoration: none;
+}
+#btnPublish_id{
+    justify-content: center !important;
+}
+
+#btnEdit_p{
+    width: 200px !important;
+}
+#btnDelete_p{
+    width: 200px !important;
+}
+#btnBack_p{
+    width: 200px !important;
 }
 
 
