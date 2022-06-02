@@ -10,6 +10,7 @@ class PublishesController < ApplicationController
       @publishes =  Publish.search_content(q).page params[:page] 
         if @publishes.size > 0
            @publishes
+           @more_likes = Publish.more_likes
         else
           flash.now[:alert] = "No se encontraron coincidencias con la palabra: #{q}"
           @publishes = Publish.page params[:page] 
