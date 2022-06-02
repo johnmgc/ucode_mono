@@ -88,6 +88,28 @@ body{
 #search{
     margin-top: -4%;
 }
+.page-link{
+    border-color: #FFC300;
+    color: #FFC300;
+}
+.page-link:hover{
+    border-color: #FFC300;
+    color: #FFC300;
+}
+.active>.page-link, .page-link.active {
+    background-color: #FFC300 !important;
+    border-color: #FFC300;
+}
+.paginate{
+    margin-left: 2% !important;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+#publish_name{
+    margin-left: 2%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
 
 @media (max-width: 800px) {
     #search{
@@ -107,10 +129,9 @@ body{
         justify-content: end !important;
         margin-bottom: 4%;
     }
-    #publish_name{
-        padding-left: 10%;
+    #data{
+        border-color: #eff79f !important;
     }
-
 }
 
 @media (max-width: 1000) {
