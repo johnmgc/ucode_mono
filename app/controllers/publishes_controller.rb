@@ -10,6 +10,7 @@ class PublishesController < ApplicationController
       @publishes =  Publish.search_content(q).page params[:page] 
         if @publishes.size > 0
            @publishes
+           @more_likes = Publish.more_likes
         else
           flash.now[:alert] = "No se encontraron coincidencias con la palabra: #{q}"
           @publishes = Publish.page params[:page] 
@@ -79,7 +80,8 @@ class PublishesController < ApplicationController
     publish.likes = publish.counterLikes(params[:id]) if params[:format] == "likes"
     publish.dislikes = publish.counterdislikes(params[:id]) if params[:format] == "dislikes"
     publish.save(validate: false)
-    render publish
+    #redirect_to '/publishes'
+    redirect_back(fallback_location: { action: "index", id: publish.id})
   end
 
   private
