@@ -22,9 +22,16 @@
 
   <body>  
     <%= render "layouts/navbarfull" %>  
-    <div class="container">
-        <p style="color: green" class="notice notices_succes"><%= notice %></p>
-        <p style="color: red" class="alert notices_alert"><%= alert %></p>
+    <div class="container mt-5">
+    <% if !alert.blank? %>
+      <div class="alert alert-dark" role="alert">
+        <%= alert %>
+      </div>
+    <% elsif !notice.blank? %>
+      <div class="alert alert-light" role="alert">
+        <%= notice %>
+      </div>
+    <% end %>
       <%= yield %>
     </div>
   </body>
