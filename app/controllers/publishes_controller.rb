@@ -13,9 +13,11 @@ class PublishesController < ApplicationController
         else
           flash.now[:alert] = "No se encontraron coincidencias con la palabra: #{q}"
           @publishes = Publish.page params[:page] 
+          @more_likes = Publish.more_likes
         end  
       else
         @publishes = Publish.page params[:page]
+        @more_likes = Publish.more_likes
     end
   end
 
