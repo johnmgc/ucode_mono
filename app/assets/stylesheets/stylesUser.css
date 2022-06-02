@@ -4,7 +4,7 @@
     margin-top: -6%;
 }
 .titulo-iniciar{
-    margin-bottom: 3%;
+    margin-bottom: 5%;
 }
 .header{
     display: flex;
@@ -36,16 +36,25 @@
     margin-bottom: 3%;
 }
 #card-session{
-    width: 50%;
-    margin-top: 5%;
+    width: 40%;
+    margin: 7%;
     border-radius: 15px;
     padding: inherit;
+    background-color: #F7F9F9 ;
+}
+#link_session{
+    text-align: center;
+    
+}
+#btnSession{
+    margin-top: 4%;
 }
 #card-register{
-    width: 50%;
+    width: 40%;
     border-radius: 15px;
     padding: inherit;
     margin-top: 5%;
+    background-color: #F7F9F9;
 }
 .card{
     box-shadow: black 0px 5px 10px;

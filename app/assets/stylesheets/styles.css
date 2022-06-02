@@ -1,14 +1,46 @@
 body{
     /* background-color: #D0D3D4; */
     /* background-image: linear-gradient(155deg, #f3f200 0, #ffe400 8.33%, #ffd300 16.67%, #ffc000 25%, #ffab00 33.33%, #ff9413 41.67%, #f37b1f 50%, #e26426 58.33%, #d24f2c 66.67%, #c43d31 75%, #b82e36 83.33%, #ad213c 91.67%, #a51742 100%); */
-    background-image: linear-gradient(115deg, #eff79f 0, #f1eb8d 12.5%, #f2dd7a 25%, #f2ce66 37.5%, #f2bd53 50%, #f2ab42 62.5%, #f39a35 75%, #f5882e 87.5%, #f6772c 100%);
+    /* background-image: linear-gradient(115deg, #eff79f 0, #f1eb8d 12.5%, #f2dd7a 25%, #f2ce66 37.5%, #f2bd53 50%, #f2ab42 62.5%, #f39a35 75%, #f5882e 87.5%, #f6772c 100%); */
+}
+#content_votados{
+    font-size: 11px;
+    font-style: italic;
+}
+#title-question{
+    margin-left: -3%;
+    margin-bottom: 2%;
+}
+#back-question{
+    margin-left: -2%;
+    margin-top: 1%;
+}
+#input-title{
+    margin-bottom: 2%;
+}
+#input-content{
+    margin-bottom: 2%;
+}
+#card-votados{
+    padding: 2%;
+}
+#new_publish{
+    width: 80%;
+    background-color: #F7F9F9;
+    padding: 4%;
+    margin: auto;
+    margin-top: 7%;
+}
+
+#card_Pprincipal{
+    background-color: #F7F9F9;
 }
 #name_ucode{
     border-color: black !important;
     font-size: 30px;
 }
 .navbar{
-    background-color: transparent !important;
+    background-color: #FFC300 !important;
     margin-bottom: -2% !important;
 }
 #name_ucode{
@@ -85,9 +117,6 @@ body{
     width: 500px;
 }
 
-#search{
-    margin-top: -4%;
-}
 .page-link{
     border-color: #FFC300;
     color: #FFC300;
@@ -111,6 +140,29 @@ body{
     margin-bottom: 1%;
 }
 
+html::before {
+    background: url("fondo_ucode.svg") center center;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-size: auto 100% !important;
+    opacity: 30%;
+    height: 160% !important;    
+ }
+#alert_danger{
+    width: 100%;
+}
+#content-alert{
+    justify-content: end;
+    display: inline-block;
+    position: flex !important;
+}
+
+
 @media (max-width: 800px) {
     #search{
         margin-top: -8%;
@@ -121,6 +173,7 @@ body{
         margin-left: 10%;
         margin-right: 10%;
         
+
     }
     #container-publishes{
         width: 95%;
@@ -165,13 +218,6 @@ body{
     border-radius: 50%;
     padding: 1%;
 }
-#btnQuestion{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    padding: 1%;
-    padding-top: 2.5%;
-}
 #menu:hover{
     border-color: transparent !important;
     background-color: transparent !important;   
@@ -197,7 +243,6 @@ body{
 }
 #container-publishes{
     box-shadow: none;
-    background-color: #F0F3F4;
     margin: 2%;
     padding: 2%;
 }
