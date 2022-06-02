@@ -26,11 +26,11 @@
     <% if !alert.blank? %>
       <div class="alert alert-dark" role="alert">
         <%= alert %>
-      </div>
+      </div><br><br>
     <% elsif !notice.blank? %>
       <div class="alert alert-light" role="alert">
         <%= notice %>
-      </div>
+      </div><br><br>
     <% end %>
       <%= yield %>
     </div>
