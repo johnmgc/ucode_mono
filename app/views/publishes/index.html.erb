@@ -28,8 +28,11 @@
               <% @publishes.each do |publish| %>
               <%= render publish %>
               <% end %>
-              <%= paginate @publishes %>
-            </div>         
+              
+            </div> 
+            <div class="paginate">
+              <%= paginate @publishes, id:'paginate'%>
+            </div>        
             <%# <%= link_to "Nueva Publicación", new_publish_path %>
         </div>  
       </div> 
