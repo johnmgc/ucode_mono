@@ -1,6 +1,7 @@
 
 class CommentsController < ApplicationController
   before_action :set_comment, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /comments or /comments.json
   def index
@@ -23,8 +24,8 @@ class CommentsController < ApplicationController
 
   # POST /comments or /comments.json
   def create
-    @comment = Comment.new(comment_params)    
-    @comment.publish_id = @publicacion.first.id
+    @comment = Comment.new(comment_params)
+    @comment.publish_id = comment_params[:publish_id]
     @comment.user_id = current_user.id
     respond_to do |format|
       if @comment.save
@@ -68,7 +69,8 @@ class CommentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def comment_params
-      params.require(:comment).permit(:commenter, :body)
+      #  binding.break
+      params.require(:comment).permit(:commenter, :body, :publish_id)
     end
 end
 

@@ -24,6 +24,7 @@ class PublishesController < ApplicationController
 
   # GET /publishes/1 or /publishes/1.json
   def show
+    @comentarios = Comment.where(publish_id: @publish.id )
   end
 
   # GET /publishes/new
