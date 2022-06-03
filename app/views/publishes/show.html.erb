@@ -1,5 +1,5 @@
-<p style="color: green"><%= notice %></p>
-
+<%# <p style="color: green"><%= notice %>
+<div class="card" id="card-comentari">
 <%= render @publish %>
 
 <div>
@@ -22,22 +22,24 @@
   <% end %>
 </div>
 
-
- <div class="card-body">
-       <hr>
-          <h4 class="card-title"><center>Comentarios</center></h4>
-        <hr>
-            <div class='mt-3'>
-              <% @comentarios.each do |coments|  %> 
-                <div class="card text-bg-light mb-3" style="max-width: 100%;">
-                  <div class="card-header"><h6><%= coments.commenter %></h6></div>
-                    <div class="card-body">
-                      <p class="card-text"><%= coments.body %></p>
-                    </div>
-                  </div>
-                </div>             
-              <% end %>
+<div class="card-body">
+  <hr>
+    <h4 class="card-title"><center>Comentarios</center></h4>
+  <hr>
+    <div class='mt-3'>
+      <% @comentarios.each do |coments|  %> 
+        <div class="card text-bg-light mb-3" style="max-width: 100%;">
+            <div class="card-body">
+              <p class="card-text"><%= coments.body %></p>
+              <p id="create"><strong>Fecha Respuesta:</strong> fecha</p>
+              <p id="create"><strong>Creado por:</strong> nick</p>
             </div>
-  </div>  
+          </div>
+        </div>             
+      <% end %>
+    </div>
+</div>
+</div>
+ 
 
 

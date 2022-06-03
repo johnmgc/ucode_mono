@@ -18,7 +18,7 @@ class CommentsTest < ApplicationSystemTestCase
     fill_in "Commenter", with: @comment.commenter
     click_on "Create Comment"
 
-    assert_text "Comment was successfully created"
+    assert_text "El comentario fue creado con éxito"
     click_on "Back"
   end
 
@@ -38,6 +38,6 @@ class CommentsTest < ApplicationSystemTestCase
     visit comment_url(@comment)
     click_on "Destroy this comment", match: :first
 
-    assert_text "Comment was successfully destroyed"
+    assert_text "El comentario ha sido eliminado"
   end
 end

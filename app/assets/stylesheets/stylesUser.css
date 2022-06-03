@@ -21,6 +21,7 @@
 .signUp{
     margin-bottom: 3%;
 }
+
 .col-md{
     margin: 2%;
 }
@@ -55,6 +56,20 @@
     padding: inherit;
     margin-top: 5%;
     background-color: #F7F9F9;
+}
+#resetPass{
+    width: 80%;
+    justify-content: center !important;
+    text-align: center !important;
+    justify-items: center!;
+}
+#resetPass1{    
+    justify-content: center !important;
+    text-align: center !important;
+    justify-items: center!;
+}
+#btnresetPass{
+    width: 100%;
 }
 .card{
     box-shadow: black 0px 5px 10px;

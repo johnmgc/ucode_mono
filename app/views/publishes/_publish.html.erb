@@ -5,7 +5,7 @@
       <p><%= publish.content%></p>
       <p id="create"><strong>Fecha publicacion:</strong> <%= publish.published_at.to_s.to_date%></p>
       <p id="create"><strong>Creado por:</strong> <%= !publish.user.nickname.blank? ? publish.user.nickname : "Anonimo"  %></p>
-        <%= button_to "Comentario", new_comment_path(publish.id), method: "get",  class: 'btn btn-light'%>
+      <%= button_to "Aporta tu comentario", new_comment_path(publish.id), method: "get",  class: 'btn btn-warning', id:'btnComentari'%>
         <div class="row" id="container-like">
           <div class="col-1" id="btnLike">
             <%= button_to "", likes_publishes_path(publish.id,"likes"), method: "post",  class: 'btn btn-light position-absolute bi bi-emoji-laughing', id:"like"%>
@@ -20,7 +20,7 @@
           </span>
         </div>                        
       </div>
-    </div>
+    </div>    
   </div>
 </div>
 
