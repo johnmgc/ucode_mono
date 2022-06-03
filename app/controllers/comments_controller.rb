@@ -13,6 +13,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
+    @publicacion = Publish.where("id = #{params[:format]}")
     @comment = Comment.new
   end
 
@@ -22,8 +23,9 @@ class CommentsController < ApplicationController
 
   # POST /comments or /comments.json
   def create
-    @comment = Comment.new(comment_params)
-    @comment.usuario_id = current_user.id
+    @comment = Comment.new(comment_params)    
+    @comment.publish_id = @publicacion.first.id
+    @comment.user_id = current_user.id
     respond_to do |format|
       if @comment.save
         format.html { redirect_to comment_url(@comment), notice: "Comment was successfully created." }
