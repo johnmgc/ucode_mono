@@ -35,7 +35,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       t.string :first_name, default: 0
       t.string :second_name, default: 0
       t.string :last_name, default: 0
-      t.string :nickname, default: 0
+      t.string :nickname
       t.string :document_type, default: 0
       t.string :document_number, default: 0
       t.string :country, default: 0

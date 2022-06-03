@@ -1,6 +1,7 @@
 
 class CommentsController < ApplicationController
   before_action :set_comment, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /comments or /comments.json
   def index
@@ -13,6 +14,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
+    @publicacion = Publish.where("id = #{params[:format]}")
     @comment = Comment.new
   end
 
@@ -23,10 +25,11 @@ class CommentsController < ApplicationController
   # POST /comments or /comments.json
   def create
     @comment = Comment.new(comment_params)
-    @comment.usuario_id = current_user.id
+    @comment.publish_id = comment_params[:publish_id]
+    @comment.user_id = current_user.id
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to comment_url(@comment), notice: "Comment was successfully created." }
+        format.html { redirect_to comment_url(@comment), notice: "El comentario fue creado con éxito." }
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -53,7 +56,7 @@ class CommentsController < ApplicationController
     @comment.destroy
 
     respond_to do |format|
-      format.html { redirect_to comments_url, notice: "Comment was successfully destroyed." }
+      format.html { redirect_to comments_url, notice: "El comentario ha sido eliminado." }
       format.json { head :no_content }
     end
   end
@@ -66,7 +69,8 @@ class CommentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def comment_params
-      params.require(:comment).permit(:commenter, :body)
+      #  binding.break
+      params.require(:comment).permit(:commenter, :body, :publish_id)
     end
 end
 

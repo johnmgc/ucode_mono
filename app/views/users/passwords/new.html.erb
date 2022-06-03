@@ -5,9 +5,9 @@
     </div>
     <div class="card-body">
           <!-- <h5 class="card-title">Universal Code</h5> -->
-      <h1 id="offcanvasRightLabel" class="titulo-iniciar" style="text-align:center;">Forgot your password?</h1>
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
+      <h1 id="offcanvasRightLabel" class="titulo-iniciar" style="text-align:center; margin-bottom: 8%;">Olvidaste tu contraseña?</h1>
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= render "users/shared/error_messages", resource: resource %>
 
   <div class="row">
     <div class="col-md">
@@ -18,21 +18,21 @@
     </div>
   </div>
 
-  <div class="row" id="resetPass">
-      <div class="d-grid gap-2 col-6 mx-auto mb-3">
-        <%= f.submit "Send me reset password instructions", class: 'btn btn-outline-danger reset' %>
+  <div class="row">
+      <div class="d-grid gap-2 col-12 mx-auto mb-4 mt-3" id="resetPass">
+        <%= f.submit "Restablecer contraseña", class: 'btn btn-outline-danger reset', id:"btnresetPass" %>
+      </div>
+  </div>
+   <div class="row">
+      <div class="d-grid gap-2 col-12 mx-auto" id="resetPass">
+        <p><%= link_to "Iniciar sesión", new_session_path(resource_name) %></p>
       </div>
   </div>
   <div class="row">
-    <div class="d-grid gap-2 col-6 mx-auto mb-3">
-      <%= link_to "Iniciar sesión", new_session_path(resource_name), class: 'btn btn-outline-warning login' %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="d-grid gap-2 col-6 mx-auto mb-3">
-      <%= link_to "Registrese", new_registration_path(resource_name), class: 'btn btn-outline-warning login' %>
-    </div>
-  </div>
+      <div class="d-grid gap-2 col-12 mx-auto mb-3" id="resetPass">
+        <%= link_to "Registrese", new_registration_path(resource_name) %>
+      </div>
+  </div>  
 <% end %>
     </div>
   </div>

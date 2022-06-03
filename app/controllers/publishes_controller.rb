@@ -7,23 +7,24 @@ class PublishesController < ApplicationController
   def index
     if !params[:search].blank?
       q = params[:search]
-      @publishes =  Publish.search_content(q).page params[:page] 
+      @publishes =  Publish.order("published_at DESC").search_content(q).page params[:page] 
         if @publishes.size > 0
            @publishes
-           @more_likes = Publish.more_likes
+           @more_likes = Publish.more_likes.page params[:page] 
         else
           flash.now[:alert] = "No se encontraron coincidencias con la palabra: #{q}"
-          @publishes = Publish.page params[:page] 
-          @more_likes = Publish.more_likes
+          @publishes = Publish.order("published_at DESC").page params[:page] 
+          @more_likes = Publish.more_likes.page params[:page] 
         end  
       else
-        @publishes = Publish.page params[:page]
-        @more_likes = Publish.more_likes
+        @publishes = Publish.order("published_at DESC").page params[:page]
+        @more_likes = Publish.more_likes.page params[:page] 
     end
   end
 
   # GET /publishes/1 or /publishes/1.json
   def show
+    @comentarios = Comment.where(publish_id: @publish.id )
   end
 
   # GET /publishes/new
@@ -39,8 +40,8 @@ class PublishesController < ApplicationController
   def create
     @publish = Publish.new(publish_params)
     #binding.break
-    @publish.usuario_id = current_user.id
-    @publish.published_at = Date.today
+    @publish.user_id = current_user.id
+    @publish.published_at = Time.now
     respond_to do |format|
       if @publish.save
         format.html { redirect_to publish_url(@publish), notice: "La publicación se creó con éxito." }
