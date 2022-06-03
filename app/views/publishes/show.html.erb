@@ -3,7 +3,7 @@
 <%= render @publish %>
 
 <div>
-<% if @publish.usuario_id == current_user.id %>
+<% if @publish.user_id == current_user.id %>
     <div class="row" id="btnPublish_id">
       <div class="col-md-2">
         <%= link_to "Editar publicacion", edit_publish_path(@publish), class: 'btn btn-secondary', id:'btnEdit_p' %>

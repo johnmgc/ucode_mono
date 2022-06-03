@@ -7,7 +7,8 @@ validates :content, presence: true
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 #>>>>>>>>>>>>>>>Asociacciones/Relaciones<<<<<<<<<<<<<<<<<
-has_many :comments
+has_many :comment
+belongs_to :user
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
