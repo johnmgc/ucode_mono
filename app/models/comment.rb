@@ -1,5 +1,6 @@
 
 class Comment < ApplicationRecord
-    belongs_to :publishes
+    belongs_to :publish
+    belongs_to :user
 
 end

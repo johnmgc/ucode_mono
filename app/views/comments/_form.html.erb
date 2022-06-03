@@ -19,6 +19,7 @@
   <div>
     <%= form.label :body, style: "display: block" %>
     <%= form.text_area :body %>
+    <%= form.hidden_field :publish_id, value: @publicacion.first.id %>
   </div>
 
   <div>
