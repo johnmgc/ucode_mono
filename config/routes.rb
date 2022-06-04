@@ -5,7 +5,11 @@ Rails.application.routes.draw do
       post 'likes/:id', to: 'publishes#likes_publish', as: :likes
     end
   end
-  devise_for :users
+
+    devise_for :users, controllers: {
+      sessions: 'users/sessions'
+    }
+
   root to: 'publishes#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
