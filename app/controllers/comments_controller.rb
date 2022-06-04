@@ -1,7 +1,7 @@
 
 class CommentsController < ApplicationController
   before_action :set_comment, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!
+  before_action :auth_user
 
   # GET /comments or /comments.json
   def index
@@ -61,7 +61,14 @@ class CommentsController < ApplicationController
     end
   end
 
-  private
+  private 
+
+  def auth_user
+    if !user_signed_in?
+        redirect_to root_path
+        flash[:alert] = "Debes iniciar Sesion"
+    end
+  end
     # Use callbacks to share common setup or constraints between actions.
     def set_comment
       @comment = Comment.find(params[:id])

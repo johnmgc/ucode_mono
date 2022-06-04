@@ -24,7 +24,7 @@ class PublishesController < ApplicationController
 
   # GET /publishes/1 or /publishes/1.json
   def show
-    @comentarios = Comment.where(publish_id: @publish.id )
+    @comentarios = Comment.where(publish_id: @publish.id ).page params[:page]
   end
 
   # GET /publishes/new
