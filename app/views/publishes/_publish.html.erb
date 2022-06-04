@@ -1,8 +1,8 @@
 <div class="card" id="container-publishes">
   <div class="card-body">
     <div id="<%= dom_id publish %>">
-      <p><%= link_to "#{publish.title}", publish, id:'title_publish' %></p>
-      <p><%= publish.content%></p>
+      <p><%= link_to "#{publish.title.capitalize}", publish, id:'title_publish' %></p>
+      <p><%= publish.content.capitalize%></p>
       <p id="create"><strong>Fecha publicacion:</strong> <%= publish.published_at.to_s.to_date%></p>
       <p id="create"><strong>Creado por:</strong> <%= !publish.user.nickname.blank? ? publish.user.nickname : "Anonimo"  %></p>
       <%= button_to "Aporta tu comentario", new_comment_path(publish.id), method: "get",  class: 'btn btn-warning', id:'btnComentari'%>
