@@ -11,7 +11,7 @@
     </div>
   <% end %>
   <div class="row" id="title-question">
-    <h2>Cual es tu pregunta?</h2>
+    <h2>Cuál es tu pregunta?</h2>
   </div>
   <div class="row" id="input-title">
     <%# <%= form.label :title, style: "display: block" %>
@@ -21,8 +21,8 @@
 
   <div class="row" id="input-content">
     <%# <%= form.label :content, style: "display: block" %>
-    <%= form.text_area :content, class:"form-control" %>
-    <div id="info-body" class="form-text">Incluye toda la informacion necesaria para respoder tu pregunta</div>
+    <%= form.rich_text_area :content, class:"form-control" %>
+    <div id="info-body" class="form-text">Incluye toda la información necesaria para respoder tu pregunta</div>
   </div>
 
   <div class="row">

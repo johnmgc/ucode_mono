@@ -11,6 +11,8 @@ has_many :comment
 belongs_to :user
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+has_rich_text :content
+
 
 #>>>>>>>>>>>>>>Scopes<<<<<<<<<<<<<<<<<<
 

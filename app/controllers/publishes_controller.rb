@@ -10,17 +10,25 @@ class PublishesController < ApplicationController
       @publishes =  Publish.order("published_at DESC").search_content(q).page params[:page] 
         if @publishes.size > 0
            @publishes
-           @more_likes = Publish.more_likes.page params[:page] 
+           @more_likes = Publish.more_likes
+           @total_publish = Publish.all
         else
           flash.now[:alert] = "No se encontraron coincidencias con la palabra: #{q}"
           @publishes = Publish.order("published_at DESC").page params[:page] 
-          @more_likes = Publish.more_likes.page params[:page] 
+          @more_likes = Publish.more_likes
+          @total_publish = Publish.all
         end  
       else
         @publishes = Publish.order("published_at DESC").page params[:page]
-        @more_likes = Publish.more_likes.page params[:page] 
+        @more_likes = Publish.more_likes
+        @total_publish = Publish.all
     end
   end
+
+  def user_publish
+        @publishes = Publish.where("user_id = #{params[:id]}")
+  end
+  
 
   # GET /publishes/1 or /publishes/1.json
   def show

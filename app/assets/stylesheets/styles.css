@@ -318,4 +318,17 @@ html::before {
     width: 200px !important;
 }
 
+.votadosindex{
+    display: block;
+    height:500px;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.body_publish{
+    display: block;
+    height:200px;
+    width: 100%;
+    overflow-y: auto;
+}
 

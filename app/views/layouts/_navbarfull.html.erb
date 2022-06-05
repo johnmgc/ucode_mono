@@ -4,6 +4,11 @@
       <a class="btn btn-warning bi bi-list" id="menu" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample"></a>    
       <a id="name_ucode" href="/">Universal Code</a>
     </div> 
+    <div>
+      <% if user_signed_in?  %>
+        <h5>Hola! <%= current_user.nickname.capitalize %></h5>
+      <% end %>
+    </div>
     <div class="btn-group" role="group">       
       <% if user_signed_in? %>         
           <%= button_to '', destroy_user_session_path, method: :delete, form: {data: {turbo_confirm: 'Esta seguro?'}}, class: 'btn btn-light bi bi-door-closed', id:'btnLogout' %>
@@ -21,7 +26,18 @@
     <h5 class="offcanvas-title">Menu</h5>
     <button type="button" id="btnClose" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
+  <hr>
   <div class="offcanvas-body">
-
+  <center><h3><%= current_user.nickname.capitalize %></h3></center>
+  <hr>
+  <h3>Mis Publicaciones:</h3>
+  <div>
+  <%= link_to "Publicaciones", publishes_path %>
+  </div>
+  <hr>
+    <h3>Mis Comentarios:</h3>
+  <div>
+  <%= link_to "Comentarios", publishes_path %>
+  </div>
   </div>
 </div>     

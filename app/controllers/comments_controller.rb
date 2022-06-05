@@ -5,11 +5,12 @@ class CommentsController < ApplicationController
 
   # GET /comments or /comments.json
   def index
-    @comments = Comment.all
+    @comments = Comment.where("user_id = #{current_user.id}")
   end
 
   # GET /comments/1 or /comments/1.json
   def show
+    @publicacion = Publish.where("id = #{@comment.id}")
   end
 
   # GET /comments/new
