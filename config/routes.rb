@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :publishes do
     collection do
       post 'likes/:id', to: 'publishes#likes_publish', as: :likes
+      get 'user_publish/:id', to: 'publishes#user_publish', as: :user_publish
     end
   end
   # devise_for :users, :controllers => { registrations: 'registrations' }
