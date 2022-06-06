@@ -211,6 +211,14 @@ html::before {
     #data{
         border-color: #eff79f !important;
     }
+    #name_ucode{
+        margin-top: 4%;
+        font-size: 20px;
+    }
+    #nick_perfil{
+        margin-top: 8% !important;
+        font-size: 15px;
+    }
 }
 
 @media (max-width: 1000) {
@@ -261,8 +269,32 @@ html::before {
 .offcanvas-header{
     justify-content: start;
 }
-#btnClose{
-    margin-left: 200px;
+#btnMispiblicaciones{
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+}
+#content_Mpublics:hover{
+    background-color: #FFC300;
+    border-radius: 5px;
+    padding: 3%;
+}
+#btnMiscomment{
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+}
+#content_Mcomment:hover{
+    background-color: #FFC300;
+    border-radius: 5px;
+    padding: 3%;
+}
+#nick_perfil{
+    margin-top: 6%;
+}
+#nick_perfil1{
+    margin-top: 6%;
+    display: none;
 }
 #btn_filter{
     margin-bottom: 2%;
@@ -319,6 +351,7 @@ html::before {
 }
 
 .votadosindex{
+    padding: 5%;
     display: block;
     height:500px;
     width: 100%;
@@ -327,7 +360,6 @@ html::before {
 
 .body_publish{
     display: block;
-    height:200px;
     width: 100%;
     overflow-y: auto;
 }
