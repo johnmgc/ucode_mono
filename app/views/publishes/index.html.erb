@@ -10,12 +10,12 @@
       <div class="btn-group" role="group">  
         <%# <%= button_to 'Activas', user_session_path, class: 'btn btn-warning box-1', id:'btnActive'%>
         <%# <%= button_to 'Populares', user_session_path, class: 'btn btn-warning box-1', id:'btnPopular'%>
-        <button type="button" class="btn btn-warning bi bi-filter box-1" data-bs-toggle="dropdown" aria-expanded="false" id="btnfilter"></button>
-        <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+        <%# <button type="button" class="btn btn-warning bi bi-filter box-1" data-bs-toggle="dropdown" aria-expanded="false" id="btnfilter"></button> %>
+        <%# <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
           <li><a class="dropdown-item" href="#">Semana</a></li>
           <li><a class="dropdown-item" href="#">Mes</a></li>
           <li><a class="dropdown-item" href="#">Año</a></li>
-        </ul>        
+        </ul>         %>
       </div>      
     </div>
   </div>
@@ -23,7 +23,8 @@
     <div class="col-md-8">
       <div class="card">
         <div class="card-body" id="card_Pprincipal">
-          <h3 class="card-title" id="publish_name">Publicaciones <span><%= @total_publish.size %></span> </h3> 
+        <%# <h3 class="card-title" id="publish_name">Publicaciones <span><%= @total_publish.size %></span> </h3> 
+          <h3 class="card-title" id="publish_name">Publicaciones</h3> 
             <div id="publishes">
               <% @publishes.each do |publish| %>
               <%= render publish %>
