@@ -6,17 +6,17 @@
   </div>
   <div class="row">
     <div class="col-md-12" id='btn_filter'> 
+    <%= link_to "Formula una pregunta", new_publish_path, class: 'btn btn-secondary box-1', id:'btnQuestion' %>
       <div class="btn-group" role="group">  
-        <%= button_to 'Activas', user_session_path, class: 'btn btn-warning box-1', id:'btnActive'%>
-        <%= button_to 'Populares', user_session_path, class: 'btn btn-warning box-1', id:'btnPopular'%>
+        <%# <%= button_to 'Activas', user_session_path, class: 'btn btn-warning box-1', id:'btnActive'%>
+        <%# <%= button_to 'Populares', user_session_path, class: 'btn btn-warning box-1', id:'btnPopular'%>
         <button type="button" class="btn btn-warning bi bi-filter box-1" data-bs-toggle="dropdown" aria-expanded="false" id="btnfilter"></button>
         <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
           <li><a class="dropdown-item" href="#">Semana</a></li>
           <li><a class="dropdown-item" href="#">Mes</a></li>
           <li><a class="dropdown-item" href="#">Año</a></li>
         </ul>        
-      </div>
-      <%= link_to "Formula una pregunta", new_publish_path, class: 'btn btn-secondary box-1', id:'btnQuestion' %>
+      </div>      
     </div>
   </div>
   <div class="row" id="container-card">
