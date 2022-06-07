@@ -255,7 +255,7 @@ DEPENDENCIES
   capybara
   debug
   devise (~> 4.8, >= 4.8.1)
-  image_processing
+  image_processing (~> 1.2)
   importmap-rails
   jbuilder
   kaminari (~> 1.2, >= 1.2.2)
