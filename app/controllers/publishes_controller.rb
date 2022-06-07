@@ -26,7 +26,7 @@ class PublishesController < ApplicationController
   end
 
   def user_publish
-        @publishes = Publish.where("user_id = #{params[:id]}")
+        @publishes = Publish.where("user_id = #{params[:id]}").page params[:page]
   end
   
 
