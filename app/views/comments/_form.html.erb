@@ -17,7 +17,9 @@
   <div>
     <%# <%= form.label :body, style: "display: block" %>
     <%= form.rich_text_area :body, class:"form-control", id:"comment" %>
+    <% if !@publicacion.blank? %>
     <%= form.hidden_field :publish_id, value: @publicacion.first.id %>
+    <% end %>
   </div>
   <div class="mt-3">
     <p><%= form.submit  class: 'btn btn-warning', id:'btnComentari', value:'Guardar' %></p>
