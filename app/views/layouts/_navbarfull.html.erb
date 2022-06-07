@@ -6,13 +6,15 @@
         <% end %>
       <a id="name_ucode" href="/">Universal Code</a>
     </div> 
-    <div>
+    <%# <div>
       <% if user_signed_in?  %>
-        <h5>Hola! <%= current_user.nickname.capitalize %></h5>
-      <% end %>
-    </div>
+        <%# <h5>Hola! <%= current_user.nickname.capitalize %></h5>
+      <%# <% end %>
+    <%# </div> %>
     <div class="btn-group" role="group">       
-      <% if user_signed_in? %>         
+      <% if user_signed_in? %>
+            <h5 id="nick_perfil">Hola! <%= current_user.nickname.capitalize%></h5> 
+            <%# <h5 id="nick_perfil1"><span class="typed"></span></h5>     %>
           <%= button_to '', destroy_user_session_path, method: :delete, form: {data: {turbo_confirm: 'Esta seguro?'}}, class: 'btn btn-light bi bi-door-closed', id:'btnLogout' %>
       <% else  %> 
           <%= button_to '', user_session_path ,  class: 'btn btn-light bi bi-person-fill', id:'btnSign_in' %> 
@@ -21,26 +23,24 @@
   </div>
 </nav>
 
-
+<% if user_signed_in? %>
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
   <div class="offcanvas-header">
+  <%# <button type="button" id="btnClose" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> %>
     <%= image_tag('logo1', id:'logo_menu') %>
-    <h5 class="offcanvas-title">Menu</h5>
-    <button type="button" id="btnClose" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <hr>
-    <% if user_signed_in? %>
+    <h3 class="offcanvas-title"><%= current_user.nickname.capitalize %>
+  </div>   
   <div class="offcanvas-body">
-    <center><h3><%= current_user.nickname.capitalize %></h3></center>
+    <%# <center><h3></h3></center> %>
     <hr>
-    <h3>Mis Publicaciones:</h3>
-    <div>
-      <%= link_to "Publicaciones", user_publish_publishes_path(current_user.id) %>
+    <%# <h3>Mis Publicaciones:</h3> %>
+    <div id="content_Mpublics">
+      <%= link_to "Mis Publicaciones", user_publish_publishes_path(current_user.id), id:"btnMispiblicaciones" %>
     </div>
     <hr>
-    <h3>Mis Comentarios:</h3>
-    <div>
-      <%= link_to "Comentarios", comments_path %>
+    <%# <h3>Mis Comentarios:</h3> %>
+    <div id="content_Mcomment">
+      <%= link_to "Mis Comentarios", comments_path, id:"btnMiscomment" %>
     </div>
   </div>
   <% end %>
