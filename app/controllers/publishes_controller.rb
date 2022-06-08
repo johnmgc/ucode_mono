@@ -1,4 +1,3 @@
-
 class PublishesController < ApplicationController
   before_action :set_publish, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except:[:index, :likes_publish]
@@ -26,7 +25,7 @@ class PublishesController < ApplicationController
   end
 
   def user_publish
-        @publishes = Publish.where("user_id = #{params[:id]}")
+        @publishes = Publish.where("user_id = #{params[:id]}").page params[:page]
   end
   
 

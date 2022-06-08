@@ -1,16 +1,17 @@
-
 class CommentsController < ApplicationController
   before_action :set_comment, only: %i[ show edit update destroy ]
   before_action :auth_user
 
   # GET /comments or /comments.json
   def index
-    @comments = Comment.where("user_id = #{current_user.id}")
+    @comments = Comment.where("user_id = #{current_user.id}").page params[:page]
+    @publish = Publish.where("id = #{@comments.first.id}").page params[:page]
   end
 
   # GET /comments/1 or /comments/1.json
   def show
-    @publicacion = Publish.where("id = #{@comment.id}")
+    @publicacion = Publish.where("id = #{@comment.id}").page params[:page]
+    @publish = Publish.where("id = #{@comment.id}").page params[:page]
   end
 
   # GET /comments/new
