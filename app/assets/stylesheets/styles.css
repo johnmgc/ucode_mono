@@ -331,6 +331,7 @@ html::before {
 #create{
     font-style: italic;
     font-size: 12px;
+    margin-bottom: 1%;
 }
 #title_publish{
     font-size: 25px;
@@ -361,6 +362,7 @@ html::before {
 .body_publish{
     display: block;
     width: 100%;
+    height: 170px;
     overflow-y: auto;
 }
 
