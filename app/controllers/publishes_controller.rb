@@ -1,4 +1,3 @@
-
 class PublishesController < ApplicationController
   before_action :set_publish, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except:[:index, :likes_publish]
